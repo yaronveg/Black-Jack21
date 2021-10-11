@@ -64,7 +64,7 @@ function dealCard(who) {
   // generate random card
   const newNum = Math.floor(Math.random() * 13) + 1;
   const newSuit = Math.floor(Math.random() * 4) + 1;
-  const newCard = `/dist/img/${newNum}_${newSuit}.png`;
+  const newCard = `/img/${newNum}_${newSuit}.png`;
 
   // Update hand score
   if (newNum >= 10) {
@@ -228,7 +228,7 @@ function newGame() {
   const allCards = Array.prototype.slice.call(cardsNodes);
   // loop array and set card-back src
   for (img in allCards) {
-    allCards[img].src = "/dist/img/0.png";
+    allCards[img].src = "/img/0.png";
     const currentCard = allCards[img];
     currentCard.classList.remove("fadein");
     currentCard.classList.add("fadeout");
