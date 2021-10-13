@@ -2,4 +2,4 @@
 
 Basic card game of Black-jack
 <br>
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Alt Text](https://s9.gifyu.com/images/recordinge46fa272522980e4.gif)
