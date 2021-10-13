@@ -1,4 +1,4 @@
 # Black-jack21
 
 Basic card game of Black-jack
-<img src="https://gifyu.com/image/XPYb">
+<img src="https://s9.gifyu.com/images/BlackJack.gif">
