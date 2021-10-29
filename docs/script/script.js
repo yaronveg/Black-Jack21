@@ -4,7 +4,6 @@ const dealer = {
   name: "dealer",
   isStand: false,
   cards: [],
-  cardsNum: 0,
   cardScore: 0,
   score: 0,
   secretCard: "",
@@ -13,7 +12,6 @@ const player = {
   name: "player",
   isStand: false,
   cards: [],
-  cardsNum: 0,
   cardScore: 0,
   score: 0,
 };
@@ -39,25 +37,25 @@ const winner = document.querySelector("span.winner");
 const btnHit = document.querySelector(".button-hit");
 const btnStand = document.querySelector(".button-stand");
 const btnAgain = document.querySelector(".button-again");
-btnStand.addEventListener("click", () => {
+btnStand.onclick = () => {
   player.isStand = true;
   setTimeout(() => {
     dealerTurn();
   }, animateDelay);
-});
-btnHit.addEventListener("click", () => {
+};
+btnHit.onclick = () => {
   dealCard(player);
-  if (player.cardScore >= 21 || player.cardsNum === 5) {
+  if (player.cardScore >= 21 || player.cards.length === 5) {
     setTimeout(() => {
       dealerTurn();
     }, animateDelay);
   }
-});
-btnAgain.addEventListener("click", () => {
+};
+btnAgain.onclick = () => {
   winnerWin.classList.remove("fadein");
   winnerWin.classList.add("fadeout");
   newGame();
-});
+};
 
 // DEAL A CARD
 function dealCard(who) {
@@ -87,10 +85,10 @@ function dealCard(who) {
 
   // get target card
   const targetCard = document.querySelector(
-    `.seats-${who.name} .${who.name}-card${who.cardsNum + 1} img`
+    `.seats-${who.name} .${who.name}-card${who.cards.length} img`
   );
 
-  if (who.name === "dealer" && who.cardsNum === 1) {
+  if (who.name === "dealer" && who.cards.length === 2) {
     // store secret card in dealer's object
     who.secretCard = newCard;
   } else {
@@ -98,8 +96,6 @@ function dealCard(who) {
     targetCard.src = newCard;
   }
 
-  // add card to hand
-  who.cardsNum = who.cardsNum + 1;
   setTimeout(() => {
     // fade in the card
     targetCard.classList.remove("fadeout");
@@ -108,14 +104,13 @@ function dealCard(who) {
     handUi.innerHTML = player.cardScore;
   }, animateDelay + 500);
 
-  // animation
   ////// MOVING CARD TO NEW POSITION //////
-
   // get the target location
   const targetPos = document
-    .querySelector(`.seats-${who.name} .${who.name}-card${who.cardsNum} img`)
+    .querySelector(
+      `.seats-${who.name} .${who.name}-card${who.cards.length} img`
+    )
     .getBoundingClientRect();
-
   // pass target card to CSS
   cardFly.style.setProperty("--top-target", targetPos.y + "px");
   cardFly.style.setProperty("--left-target", targetPos.left + "px");
@@ -123,12 +118,6 @@ function dealCard(who) {
 
   // call animation
   cardFly.style.animation = `dealCard ${animateDelay / 500}s ease`;
-  // move card to target
-  /*
-    ace.style.top = targetPos.y + "px";
-    ace.style.left = targetPos.left + "px";
-    ace.style.transform = "translateX(0%)";
-    */
 }
 
 ////// CHECK WIN //////
@@ -202,12 +191,12 @@ function dealerTurn() {
   btnHit.setAttribute("disabled", true);
   btnStand.setAttribute("disabled", true);
   while (dealer.isStand === false) {
-    if (dealer.cardScore >= 17 || dealer.cardsNum === 5) {
+    if (dealer.cardScore >= 17 || dealer.cards.length === 5) {
       dealer.isStand = true;
     } else {
       // setTimeout(() => {
       dealCard(dealer);
-      // }, animateDelay * (dealer.cardsNum / 2));
+      // }, animateDelay * (dealer.cards.length / 2));
     }
   }
   setTimeout(() => {
@@ -236,13 +225,11 @@ function newGame() {
   // reset "isStand", "cardNum" and "cardScore"
   player.isStand = false;
   dealer.isStand = false;
-  dealer.cardsNum = 0;
-  player.cardsNum = 0;
   player.cardScore = 0;
   dealer.cardScore = 0;
   dealer.secretCard = "";
-  player.cards.length = 0;
-  dealer.cards.length = 0;
+  player.cards = [];
+  dealer.cards = [];
 
   // deal starting cards
   setTimeout(() => {
