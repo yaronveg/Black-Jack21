@@ -19,6 +19,9 @@ const player = {
 const dealerScore = document.querySelector(".score-dealer");
 const playerScore = document.querySelector(".score-player");
 
+// create sound objects
+const sfxCard = new Audio(`./sfx/card1.m4a`);
+
 // get hand score element
 const handUi = document.querySelector(".hand-player");
 
@@ -103,6 +106,9 @@ function dealCard(who) {
     // update player hand score in UI
     handUi.innerHTML = player.cardScore;
   }, animateDelay + 500);
+
+  // activate sound and reset
+  sfxCard.canplaythrough = sfxCard.play();
 
   ////// MOVING CARD TO NEW POSITION //////
   // get the target location
