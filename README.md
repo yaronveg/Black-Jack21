@@ -22,7 +22,7 @@ The buttons will turn gold once they are active.
 The dealer takes his turn same as the player, but he must stand on 17 or higher.
 
 ### ♠ Scoring ♠
-- Draw: on one gets points.
+- Draw: no one gets points.
 - Win under 21 and you will get 1 point.
 - Lose by going over 21 and you will hand over the other player 2 points!
 
