@@ -124,6 +124,7 @@ function dealCard(who) {
   cardFly.style.setProperty("--target-x", "translateX(0%)");
 
   // call animation
+
   cardFly.style.animation = `dealCard ${animateDelay / 500}s ease`;
 }
 
@@ -201,9 +202,7 @@ function dealerTurn() {
     if (dealer.cardScore >= 17 || dealer.cards.length === 5) {
       dealer.isStand = true;
     } else {
-      // setTimeout(() => {
       dealCard(dealer);
-      // }, animateDelay * (dealer.cards.length / 2));
     }
   }
   setTimeout(() => {
