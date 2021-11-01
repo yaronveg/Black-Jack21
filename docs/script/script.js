@@ -108,6 +108,7 @@ function dealCard(who) {
   }, animateDelay + 500);
 
   // activate sound and reset
+  sfxCard.currentTime = 0;
   sfxCard.canplaythrough = sfxCard.play();
 
   ////// MOVING CARD TO NEW POSITION //////
