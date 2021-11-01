@@ -6,7 +6,7 @@ Basic card game of Blackjack
 ## How to play?
 
 ### ♦ Game UI ♦
-The Players scores are displayed tward the center of the screen ("Player: 0" "Dealer: 0").
+The Players' scores are displayed tward the center of the screen ("Player: 0" "Dealer: 0").
 The sum of you hand score is displayed under your cards ("Current Hand: 0").
 Your actions are displayed as buttons beneath your hand score.
 
