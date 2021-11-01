@@ -25,3 +25,20 @@ The dealer takes his turn same as the player, but he must stand on 17 or higher.
 - Draw: on one gets points.
 - Win under 21 and you will get 1 point.
 - Lose by going over 21 and you will hand over the other player 2 points!
+
+## 🖥 About the game
+
+### 🔧 Tools
+The games was built using a combination of HTML, SASS/CSS and JavaScript.
+The code was written using VS code.
+
+### 🏃‍♀️ Animation
+The flying card animation was done with a combination of CSS keyframes and JS event-listeners.
+Every time a card is being dealt, the code calculates trajcetory and passes it to the CSS as an attribute.
+The CSS then adds a spin around the Z-Axis.
+
+### 🃏 Card design
+Card designs were taken from Wikipedia's page for the standard 52-card deck:
+https://en.wikipedia.org/wiki/Standard_52-card_deck
+
+The back of the cards were designed by me using Photoshop.
