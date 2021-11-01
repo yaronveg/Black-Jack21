@@ -20,7 +20,7 @@ const dealerScore = document.querySelector(".score-dealer");
 const playerScore = document.querySelector(".score-player");
 
 // create sound objects
-const sfxCard = new Audio(`./sfx/card1.m4a`);
+const sfxCard = new Audio(`./sfx/card1.mp3`);
 
 // get hand score element
 const handUi = document.querySelector(".hand-player");
