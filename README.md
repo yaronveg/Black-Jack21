@@ -34,8 +34,8 @@ The code was written using VS code.
 
 ### 🏃‍♀️ Animation
 The flying card animation was done with a combination of CSS keyframes and JS event-listeners.
-Every time a card is being dealt, the code calculates trajcetory and passes it to the CSS as an attribute.
-The CSS then adds a spin around the Z-Axis.
+Every time a card is being dealt, the code calculates trajcetory and passes it to the CSS as a style property.
+The animation itself is beaing called in same manner. The CSS then adds a spin around the Z-Axis.
 
 ### 🃏 Card design
 Card designs were taken from Wikipedia's page for the standard 52-card deck:
