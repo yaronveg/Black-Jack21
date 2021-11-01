@@ -194,20 +194,36 @@ startBtn.addEventListener("click", () => {
 });
 
 ////// DEALER'S TURN //////
+function dealerCards() {
+  // while (dealer.isStand === false) {
+  //   if (dealer.cardScore >= 17 || dealer.cards.length === 5) {
+  //     dealer.isStand = true;
+  //   } else {
+  //     dealCard(dealer);
+  //   }
+  // }
+
+  if (dealer.cardScore >= 17 || dealer.cards.length === 5) {
+    dealer.isStand = true;
+  } else {
+    dealCard(dealer);
+    setTimeout(() => {
+      dealerCards();
+    }, animateDelay + 1000);
+  }
+}
+
 function dealerTurn() {
   // disable player buttons
   btnHit.setAttribute("disabled", true);
   btnStand.setAttribute("disabled", true);
-  while (dealer.isStand === false) {
-    if (dealer.cardScore >= 17 || dealer.cards.length === 5) {
-      dealer.isStand = true;
-    } else {
-      dealCard(dealer);
-    }
-  }
+
+  // deal cards
+  dealerCards();
+
   setTimeout(() => {
     checkWin();
-  }, animateDelay * 3);
+  }, animateDelay + 1500);
 }
 
 function newGame() {
