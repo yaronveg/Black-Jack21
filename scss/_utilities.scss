@@ -31,8 +31,6 @@ $fade-time: 0.5s;
 // BUTTONS
 %btn {
   display: inline-block;
-  // width: 300px;
-  // height: 80px;
   margin: 0 auto;
   padding: 1rem 2.5rem;
   outline: none;
@@ -62,16 +60,18 @@ $fade-time: 0.5s;
   &:disabled {
     background: grey;
     pointer-events: none;
+    transform: translateY(800px);
   }
   &:enabled {
     background: lighten(#7a7055, 7);
     pointer-events: all;
+    transform: translateY(0px);
   }
 }
 .button-again {
   @extend %btn;
-  // &:disabled {
-  //   background: grey;
-  //   pointer-events: none;
-  // }
+  &:disabled {
+    background: grey;
+    pointer-events: none;
+  }
 }

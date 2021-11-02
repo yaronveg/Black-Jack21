@@ -117,14 +117,12 @@ img {
     top: -150px;
     left: 50%;
     transform: translateX(-50%, -50%);
-    // transform: rotateX(0deg);
     transform: rotateZ(0deg);
   }
   to {
     top: var(--top-target, -150px);
     left: var(--left-target, 50%);
     transform: var(--target-x, translateX(-50%));
-    // transform: rotateX(180deg);
     transform: rotateZ(360deg);
   }
 }

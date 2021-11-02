@@ -189,20 +189,11 @@ startBtn.addEventListener("click", () => {
   gameTable.classList.remove("fadeout");
   gameTable.classList.add("fadein");
   startBtn.setAttribute("disabled", true);
-  startBtn.classList.add("disabled");
   newGame();
 });
 
 ////// DEALER'S TURN //////
 function dealerCards() {
-  // while (dealer.isStand === false) {
-  //   if (dealer.cardScore >= 17 || dealer.cards.length === 5) {
-  //     dealer.isStand = true;
-  //   } else {
-  //     dealCard(dealer);
-  //   }
-  // }
-
   if (dealer.cardScore >= 17 || dealer.cards.length === 5) {
     dealer.isStand = true;
   } else {
@@ -218,12 +209,13 @@ function dealerTurn() {
   btnHit.setAttribute("disabled", true);
   btnStand.setAttribute("disabled", true);
 
-  // deal cards
-  dealerCards();
-
   setTimeout(() => {
-    checkWin();
-  }, animateDelay + 1500);
+    // deal cards
+    dealerCards();
+    setTimeout(() => {
+      checkWin();
+    }, animateDelay + 1500);
+  }, animateDelay);
 }
 
 function newGame() {
@@ -265,10 +257,6 @@ function newGame() {
           // player buttons
           btnHit.removeAttribute("disabled", true);
           btnStand.removeAttribute("disabled", true);
-          btnHit.classList.remove("disabled");
-          btnStand.classList.remove("disabled");
-          btnHit.classList.add("enabled");
-          btnStand.classList.add("enabled");
         }, animateDelay + 1000);
       }, animateDelay + 1000);
     }, animateDelay + 1000);
