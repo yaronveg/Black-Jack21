@@ -16,7 +16,7 @@ This "secret card" will be revealed once the dealer finishes his turn.
 
 ### ♥ Player's turn ♥
 Once the dealer finishes dealing, you can decide to take another card ("hit"), or to end your turn with the cards you currently have("stand").
-The buttons will turn gold once they are active.
+The buttons will slide in once they are active.
 
 ### ♥ Dealer's turn ♥
 The dealer takes his turn same as the player, but he must stand on 17 or higher.
