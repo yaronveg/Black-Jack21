@@ -37,11 +37,13 @@ $fade-time: 0.5s;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
   background: #7a7055;
+  border: 3px solid #7a7055;
   color: #eee;
   &:hover {
     background: lighten(#7a7055, 7);
+    border: 3px solid #bbad88;
   }
 }
 .button-greeting {
@@ -63,7 +65,6 @@ $fade-time: 0.5s;
     transform: translateY(800px);
   }
   &:enabled {
-    background: lighten(#7a7055, 7);
     pointer-events: all;
     transform: translateY(0px);
   }
@@ -71,7 +72,6 @@ $fade-time: 0.5s;
 .button-again {
   @extend %btn;
   &:disabled {
-    background: grey;
     pointer-events: none;
   }
 }
